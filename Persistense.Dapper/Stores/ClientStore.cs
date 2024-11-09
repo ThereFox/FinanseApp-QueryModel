@@ -13,11 +13,11 @@ public class ClientStore : IClientStore
     {
         _connection = connection;
     }
-
-    private readonly string getAllSQLRequest = "SELECT * FROM \"Clients\"";
     
     public async Task<IEnumerable<ClientShortInfoDTO>> GetAll()
     {
-        return await _connection.QueryAsync<ClientShortInfoDTO>(getAllSQLRequest);
+        var sqlRequest = $@"SELECT * FROM {"\"Clients\""}";
+        
+        return await _connection.QueryAsync<ClientShortInfoDTO>(sqlRequest);
     }
 }

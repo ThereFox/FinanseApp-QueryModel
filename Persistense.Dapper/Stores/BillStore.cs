@@ -35,13 +35,8 @@ public class BillStore : IBillStore
         throw new NotImplementedException();
     }
 
-    public Task<Result<BillPublicShortInfoDTO>> GetById(Guid id)
+    public async Task<Result<BillPublicShortInfoDTO>> GetById(Guid id)
     {
-       
-        var sqlCommandBase =
-            @"
-                SELECT *
-                FROM 
-            ";
+        return Result.Failure<BillPublicShortInfoDTO>("Error");
     }
 }
