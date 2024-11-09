@@ -1,6 +1,9 @@
 using System.Data;
+using Application.Stores;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
+using Persistense.Stores;
 
 namespace Persistense;
 
@@ -10,10 +13,13 @@ public static class DI
     {
         services.AddScoped<IDbConnection>(ex =>
         {
-            var connection = new SqlConnection(connectionString);
+            var connection = new NpgsqlConnection(connectionString);
             return connection;
         });
 
+        services.AddScoped<IClientStore, ClientStore>();
+        services.AddScoped<IBillStore, BillStore>();
+        
         return services;
     }
 }
