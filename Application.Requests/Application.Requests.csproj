@@ -4,11 +4,8 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Application</RootNamespace>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Folder Include="Handlers\Events\" />
-    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="CSharpFunctionalExtensions" Version="3.1.0" />

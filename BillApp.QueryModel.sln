@@ -4,9 +4,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.EF", "Persisten
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{9022068C-1C06-4A30-BE42-C1B99195D6D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{DD3B0087-4BE9-42EA-A7DB-22E20AEEFBD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Requests", "Application.Requests\Application.Requests.csproj", "{DD3B0087-4BE9-42EA-A7DB-22E20AEEFBD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.Dapper", "Persistense.Dapper\Persistense.Dapper.csproj", "{59EAEE04-491C-43EF-89DC-807F561A92C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.Dapper.QueryModel", "Persistense.Dapper.QueryModel\Persistense.Dapper.QueryModel.csproj", "{59EAEE04-491C-43EF-89DC-807F561A92C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.StateUpdator.EventReader", "Infrastructure.StateUpdator.EventReader\Infrastructure.StateUpdator.EventReader.csproj", "{4AA40C14-5CF9-4557-9E48-96F0595A038E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{DC0A00C8-09FC-446B-BDA0-3C664664A448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.StateUpdator", "Application.StateUpdator\Application.StateUpdator.csproj", "{7DBEBDDF-E199-4ECB-B7CE-281C339579F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StateUpdator", "StateUpdator", "{0CBB6797-806D-4EC8-A25E-CF065E497B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.Dapper.StateUpdator", "Persistense.Dapper.StateUpdator\Persistense.Dapper.StateUpdator.csproj", "{A3B7881D-5668-4816-ABC7-0BA72DD42782}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +40,26 @@ Global
 		{59EAEE04-491C-43EF-89DC-807F561A92C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59EAEE04-491C-43EF-89DC-807F561A92C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59EAEE04-491C-43EF-89DC-807F561A92C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AA40C14-5CF9-4557-9E48-96F0595A038E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA40C14-5CF9-4557-9E48-96F0595A038E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA40C14-5CF9-4557-9E48-96F0595A038E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA40C14-5CF9-4557-9E48-96F0595A038E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC0A00C8-09FC-446B-BDA0-3C664664A448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0A00C8-09FC-446B-BDA0-3C664664A448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0A00C8-09FC-446B-BDA0-3C664664A448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0A00C8-09FC-446B-BDA0-3C664664A448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBEBDDF-E199-4ECB-B7CE-281C339579F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBEBDDF-E199-4ECB-B7CE-281C339579F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBEBDDF-E199-4ECB-B7CE-281C339579F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBEBDDF-E199-4ECB-B7CE-281C339579F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B7881D-5668-4816-ABC7-0BA72DD42782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B7881D-5668-4816-ABC7-0BA72DD42782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B7881D-5668-4816-ABC7-0BA72DD42782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B7881D-5668-4816-ABC7-0BA72DD42782}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DBEBDDF-E199-4ECB-B7CE-281C339579F8} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
+		{4AA40C14-5CF9-4557-9E48-96F0595A038E} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
+		{A3B7881D-5668-4816-ABC7-0BA72DD42782} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
 	EndGlobalSection
 EndGlobal

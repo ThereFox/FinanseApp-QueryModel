@@ -4,6 +4,7 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Persistense.Dapper</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,7 +15,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\Application.Requests\Application.Requests.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="StateUpdater\" />
     </ItemGroup>
 
 </Project>

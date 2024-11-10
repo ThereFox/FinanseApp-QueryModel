@@ -2,8 +2,8 @@ using Application.Events.Abstractions;
 
 namespace Application.Events.Realisation;
 
-public class BillAmountChanged : IEvent
+public class BillCreatedEvent : IDBStateChangeEvent
 {
     public Guid BillId { get; set; }
-    public decimal newAmount { get; set; }
+    public Guid OwnerId { get; set; }
 }

@@ -1,9 +1,10 @@
 using Application.Events.Abstractions;
+using CSharpFunctionalExtensions;
 
 namespace Application.Handlers.Abstcations;
 
 public interface IEventHadler<T> 
-    where T : IEvent
+    where T : IDBStateChangeEvent
 {
-    public void Handle(T @event);
+    public Task<Result> HandleAsync(T @event);
 }
