@@ -4,7 +4,7 @@ using CSharpFunctionalExtensions;
 
 namespace Infrastructure.StateUpdator.ValueConverter;
 
-public class JsonValueConverter<TEve> : IValueConverter<string>
+public class JsonValueConverter : IValueConverter<string>
 {
     public Result<TOutpute> Convert<TOutpute>(string input) where TOutpute : IDBStateChangeEvent
     {
