@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StateUpdator", "StateUpdato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.Dapper.StateUpdator", "Persistense.Dapper.StateUpdator\Persistense.Dapper.StateUpdator.csproj", "{A3B7881D-5668-4816-ABC7-0BA72DD42782}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.StateUpdator.EventReader.Service", "Infrastructure.StateUpdator.EventReader.Service\Infrastructure.StateUpdator.EventReader.Service.csproj", "{99191634-7CF9-4338-9CE6-F3F58318A667}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,10 +58,15 @@ Global
 		{A3B7881D-5668-4816-ABC7-0BA72DD42782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3B7881D-5668-4816-ABC7-0BA72DD42782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3B7881D-5668-4816-ABC7-0BA72DD42782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99191634-7CF9-4338-9CE6-F3F58318A667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99191634-7CF9-4338-9CE6-F3F58318A667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99191634-7CF9-4338-9CE6-F3F58318A667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99191634-7CF9-4338-9CE6-F3F58318A667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7DBEBDDF-E199-4ECB-B7CE-281C339579F8} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
 		{4AA40C14-5CF9-4557-9E48-96F0595A038E} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
 		{A3B7881D-5668-4816-ABC7-0BA72DD42782} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
+		{99191634-7CF9-4338-9CE6-F3F58318A667} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
 	EndGlobalSection
 EndGlobal
