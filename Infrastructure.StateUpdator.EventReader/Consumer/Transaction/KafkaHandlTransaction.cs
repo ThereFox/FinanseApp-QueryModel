@@ -13,7 +13,7 @@ internal class KafkaHandlTransaction<TKey, TValue> : IKafkaTransaction<TValue>
 
     public KafkaHandlTransaction(KafkaConsumer<TKey, TValue> consumer)
     {
-        _consumer = _consumer;
+        _consumer = consumer;
     }
     
     public async Task<Result<TValue>> GetNewRecordFromTopic(string topic)

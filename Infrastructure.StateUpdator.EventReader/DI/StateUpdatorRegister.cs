@@ -11,7 +11,19 @@ public static class StateUpdatorRegister
 {
     public static IServiceCollection AddStateUpdating(this IServiceCollection services)
     {
-        services.AddSingleton<KafkaConsumer<Null, string>>();
+        var config = new ConsumerConfig()
+        {
+            BootstrapServers = "localhost:9092",
+            GroupId = "TestGroup",
+            EnableAutoCommit = false,
+            AllowAutoCreateTopics = false
+        };
+            
+        var consumer = new ConsumerBuilder<Null, string>(config).Build();
+
+        services.AddSingleton<IConsumer<Null, string>>(consumer);
+        
+        services.AddScoped<KafkaConsumer<Null, string>>();
         services.AddScoped<IKafkaTransaction<string>, KafkaHandlTransaction<Null, string>>();
         services.AddScoped<IValueConverter<string>, JsonValueConverter>();
         
@@ -29,7 +41,7 @@ public static class StateUpdatorRegister
             ex =>
             {
                 var handler = ex.GetRequiredService<IEventHadler<TEvent>>();
-                var kafkaConsumer = ex.GetRequiredService<KafkaConsumer<Null, String>>();
+                var kafkaConsumer = ex.GetRequiredService<KafkaConsumer<Null, string>>();
                 var parser = ex.GetRequiredService<IValueConverter<string>>();
                 
                 return new StateUpdator<TEvent>(
