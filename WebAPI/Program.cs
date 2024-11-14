@@ -1,6 +1,7 @@
 using Application;
 using Application.Events.Realisation;
 using Infrastructure.StateUpdator;
+using Infrastructure.StateUpdator.EventReader.Service;
 using Persistense;
 using Persistense.Dapper.StateUpdator.EventHandlers;
 
@@ -15,8 +16,10 @@ var connectionString = builder.Configuration.GetValue<string>("ConnectionString"
 builder
     .Services
     .AddStateUpdating()
-    .RegistrateStateUpdateEventHandler<BillAmountChangeEvent, BillAmountChangeHandler>("amountChanges")
-    .RegistrateStateUpdateEventHandler<BillCreatedEvent, CreateBillHandler>("createBill");
+    .RegistrateStateUpdateEventHandler<BillAmountChangeEvent, BillAmountChangeHandler>("BillAmountChange")
+    .RegistrateStateUpdateEventHandler<BillCreatedEvent, CreateBillHandler>("BillCreated")
+    .RegistrateStateUpdateEventHandler<ClientCreatedEvent, CreateClientHandler>("ClientCreated")
+    .AddBackgroundDBUpdator();
 
 builder.Services
     .AddApplication()

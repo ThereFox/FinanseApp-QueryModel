@@ -14,6 +14,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Application.Requests\Application.Requests.csproj" />
       <ProjectReference Include="..\Application.StateUpdator\Application.StateUpdator.csproj" />
+      <ProjectReference Include="..\Infrastructure.StateUpdator.EventReader.Service\Infrastructure.StateUpdator.EventReader.Service.csproj" />
       <ProjectReference Include="..\Infrastructure.StateUpdator.EventReader\Infrastructure.StateUpdator.EventReader.csproj" />
       <ProjectReference Include="..\Persistense.Dapper.QueryModel\Persistense.Dapper.QueryModel.csproj" />
       <ProjectReference Include="..\Persistense.Dapper.StateUpdator\Persistense.Dapper.StateUpdator.csproj" />
