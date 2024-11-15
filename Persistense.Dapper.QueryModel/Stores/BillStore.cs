@@ -20,8 +20,8 @@ public class BillStore : IBillStore
         var sqlCommandBase = 
             $@"
             SELECT bills.{"\"Id\""}, 0, clients.{"\"Name\""} as OwnerName
-            FROM {"\"Bills\""} as bills
-            INNER JOIN {"\"Clients\""} as clients
+            FROM bills
+            INNER JOIN clients
                 ON bills.{"\"OwnerId\""} = clients.{"\"Id\""}
             ";
         

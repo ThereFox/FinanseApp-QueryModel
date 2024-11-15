@@ -18,8 +18,4 @@
       <ProjectReference Include="..\Application.Requests\Application.Requests.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="StateUpdater\" />
-    </ItemGroup>
-
 </Project>

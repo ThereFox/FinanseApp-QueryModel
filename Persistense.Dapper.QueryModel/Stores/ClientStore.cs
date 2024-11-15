@@ -16,7 +16,7 @@ public class ClientStore : IClientStore
     
     public async Task<IEnumerable<ClientShortInfoDTO>> GetAll()
     {
-        var sqlRequest = $@"SELECT * FROM {"\"Clients\""}";
+        var sqlRequest = @"SELECT * FROM clients";
         
         return await _connection.QueryAsync<ClientShortInfoDTO>(sqlRequest);
     }
