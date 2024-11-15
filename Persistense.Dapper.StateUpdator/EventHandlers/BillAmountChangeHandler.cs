@@ -40,7 +40,7 @@ public class BillAmountChangeHandler : IEventHadler<BillAmountChangeEvent>
     {
         var containWithThisBillId = $@"
             SELECT COUNT(*) 
-            FROM {"\"Bills\""}
+            FROM bills
             WHERE Id = @billId
             ";
 
@@ -61,7 +61,7 @@ public class BillAmountChangeHandler : IEventHadler<BillAmountChangeEvent>
     {
         var updateAmountSQLCommand = $@"
 
-            UPDATE {"\"Bills\""}
+            UPDATE bills
             SET Amount = @amount
             WHERE Id = @BillId
         ";

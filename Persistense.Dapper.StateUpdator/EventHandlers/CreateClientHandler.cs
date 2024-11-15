@@ -50,7 +50,7 @@ public class CreateClientHandler : IEventHadler<ClientCreatedEvent>
     {
         var containingClientSQLRequest = @$"
             SELECT COUNT(*)
-            FROM {"\"Clients\""}
+            FROM clients
             WHERE Id = @id
         ";
         
@@ -62,8 +62,8 @@ public class CreateClientHandler : IEventHadler<ClientCreatedEvent>
     private async Task<Result> createClient(ClientCreatedEvent @event)
     {
         var createClientSQLCommand = @$"
-            INSERT INTO {"\"Clients\""}
-            (ClientId, ClientName)
+            INSERT INTO clients
+            (Id, Name)
             VALUES 
             (@ClientId, @ClientName)
         ";

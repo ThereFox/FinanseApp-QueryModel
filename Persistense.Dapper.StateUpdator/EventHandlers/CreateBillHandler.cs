@@ -9,6 +9,11 @@ namespace Persistense.Dapper.StateUpdator.EventHandlers;
 public class CreateBillHandler : IEventHadler<BillCreatedEvent>
 {
     private readonly IDbConnection _connection;
+
+    public CreateBillHandler(IDbConnection connection)
+    {
+        _connection = connection;
+    }
     
     public async Task<Result> HandleAsync(BillCreatedEvent @event)
     {
@@ -32,8 +37,8 @@ public class CreateBillHandler : IEventHadler<BillCreatedEvent>
     private async Task<Result> createBill(BillCreatedEvent @event)
     {
         var createBillSQLRequest = $@"
-        INSERT INTO {"\"Bills\""} ({"\"Id\""}, {"\"OwnerId\""}, {"Amount"})
-        VALUE
+        INSERT INTO bills
+        VALUES
         (@BillId, @OwnerId, 0)
         ";
 
@@ -51,7 +56,7 @@ public class CreateBillHandler : IEventHadler<BillCreatedEvent>
     {
         var HaveClientSQLRequest = $@"
             SELECT COUNT(*) 
-            FROM {"\"Clients\""}
+            FROM clients
             WHERE Id = @clientId
             ";
 
@@ -72,7 +77,7 @@ public class CreateBillHandler : IEventHadler<BillCreatedEvent>
     {
         var alreadyHaveSQLRequest = $@"
             SELECT COUNT(*) 
-            FROM {"\"Bills\""}
+            FROM bills
             WHERE Id = @billId
             ";
 
