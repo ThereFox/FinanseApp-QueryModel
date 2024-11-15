@@ -16,7 +16,8 @@ public static class StateUpdatorRegister
             BootstrapServers = "localhost:9092",
             GroupId = "TestGroup",
             EnableAutoCommit = false,
-            AllowAutoCreateTopics = false
+            AllowAutoCreateTopics = false,
+            AutoOffsetReset = AutoOffsetReset.Earliest
         };
             
         var consumer = new ConsumerBuilder<Null, string>(config).Build();

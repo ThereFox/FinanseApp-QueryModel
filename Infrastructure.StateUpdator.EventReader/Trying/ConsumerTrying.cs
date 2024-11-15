@@ -56,7 +56,7 @@ public static class ConsumeTry
 
                 var consumeResult = consumer.Consume(TrysDeadline);
 
-                if (consumeResult == null && false)
+                if (consumeResult == null)
                 {
                     completitionSource.SetResult(Result.Failure<ConsumeResult<KeyT,ValueT>>("deadline was entered"));
                 }

@@ -18,8 +18,12 @@ public class KafkaConsumer<TKey, TValue>
 
     public async Task<Result<ConsumeResult<TKey, TValue>>> GetNewMessageFromTopic(string topic)
     {
+        _consumer.Subscribe(topic);
+        
         var readResult = await _consumer.TryGetAsync(TrysCount, TryDeadline);
 
+        _consumer.Unsubscribe();
+        
         if (readResult.IsFailure)
         {
             return Result.Failure<ConsumeResult<TKey, TValue>>(readResult.Error);
