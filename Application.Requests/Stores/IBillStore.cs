@@ -6,6 +6,7 @@ namespace Application.Stores;
 public interface IBillStore
 {
     public Task<IEnumerable<BillPublicShortInfoDTO>> GetAll();
-    public Task<IEnumerable<BillPublicShortInfoDTO>> GetWithBalanse();
-    public Task<Result<BillPublicShortInfoDTO>> GetById(Guid id);
+    public Task<Result<List<BillShortInfoDTO>>> GetAllByOwner(Guid OwnerId);
+    public Task<IEnumerable<BillShortInfoDTO>> GetWithBalanse();
+    public Task<Result<BillShortInfoDTO>> GetById(Guid id);
 }

@@ -3,16 +3,19 @@ using Application.DTOs;
 using Application.Stores;
 using CSharpFunctionalExtensions;
 using Dapper;
+using Persistense.Interfaces;
 
 namespace Persistense.Stores;
 
 public class BillStore : IBillStore
 {
     private readonly IDbConnection _connection;
-
-    public BillStore(IDbConnection connection)
+    private readonly IBillCacheStore _cacheStore;
+    
+    public BillStore(IDbConnection connection, IBillCacheStore cacheStore)
     {
         _connection = connection;
+        _cacheStore = cacheStore;
     }
     
     public async Task<IEnumerable<BillPublicShortInfoDTO>> GetAll()
@@ -30,13 +33,49 @@ public class BillStore : IBillStore
         return result;
     }
 
-    public Task<IEnumerable<BillPublicShortInfoDTO>> GetWithBalanse()
+    public async Task<Result<List<BillShortInfoDTO>>> GetAllByOwner(Guid OwnerId)
     {
-        throw new NotImplementedException();
+        var getByOwnerResult = await _cacheStore.GetAllByOwner(OwnerId);
+
+        if (getByOwnerResult.IsSuccess)
+        {
+            return getByOwnerResult.Value;
+        }
+        
+        var sqlCommandBase = @"
+            SELECT clients.Id, bills.amount, clients.Name
+            FROM bills
+                INNER JOIN clients
+                ON clients.Id = bills.OwnerId
+            Where OwnerId = @OwnerId
+            ";
+        var result = await _connection.QueryAsync<BillShortInfoDTO>(sqlCommandBase, OwnerId);
+        return result.ToList();
     }
 
-    public async Task<Result<BillPublicShortInfoDTO>> GetById(Guid id)
+    public async Task<IEnumerable<BillShortInfoDTO>> GetWithBalanse()
     {
-        return Result.Failure<BillPublicShortInfoDTO>("Error");
+        var sqlCommandBase = @"
+            SELECT clients.Id, bills.amount, clients.Name
+            FROM bills
+                INNER JOIN clients
+                ON clients.Id = bills.OwnerId
+            Where bills.Amount > 0
+            ";
+        var result = await _connection.QueryAsync<BillShortInfoDTO>(sqlCommandBase);
+        return result;
+    }
+
+    public async Task<Result<BillShortInfoDTO>> GetById(Guid id)
+    {
+        var sqlCommandBase = @"
+            SELECT clients.Id, bills.amount, clients.Name
+            FROM bills
+                INNER JOIN clients
+                ON clients.Id = bills.OwnerId
+            Where bills.Id = @billId
+            ";
+        var result = await _connection.QuerySingleAsync<BillShortInfoDTO>(sqlCommandBase, id);
+        return result;
     }
 }

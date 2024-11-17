@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.EF", "Persistense.EF\Persistense.EF.csproj", "{27104D74-246B-440F-B225-4E04FFC851C9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{9022068C-1C06-4A30-BE42-C1B99195D6D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Requests", "Application.Requests\Application.Requests.csproj", "{DD3B0087-4BE9-42EA-A7DB-22E20AEEFBD5}"
@@ -20,16 +18,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.Dapper.StateUpd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.StateUpdator.EventReader.Service", "Infrastructure.StateUpdator.EventReader.Service\Infrastructure.StateUpdator.EventReader.Service.csproj", "{99191634-7CF9-4338-9CE6-F3F58318A667}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistense.Redis.Cache", "Persistense.Redis.Cache\Persistense.Redis.Cache.csproj", "{05FC2345-91AF-4D2D-8BEA-A2D180B60E41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{27104D74-246B-440F-B225-4E04FFC851C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27104D74-246B-440F-B225-4E04FFC851C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27104D74-246B-440F-B225-4E04FFC851C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27104D74-246B-440F-B225-4E04FFC851C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9022068C-1C06-4A30-BE42-C1B99195D6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9022068C-1C06-4A30-BE42-C1B99195D6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9022068C-1C06-4A30-BE42-C1B99195D6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,6 +58,10 @@ Global
 		{99191634-7CF9-4338-9CE6-F3F58318A667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99191634-7CF9-4338-9CE6-F3F58318A667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99191634-7CF9-4338-9CE6-F3F58318A667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05FC2345-91AF-4D2D-8BEA-A2D180B60E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05FC2345-91AF-4D2D-8BEA-A2D180B60E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05FC2345-91AF-4D2D-8BEA-A2D180B60E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05FC2345-91AF-4D2D-8BEA-A2D180B60E41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7DBEBDDF-E199-4ECB-B7CE-281C339579F8} = {0CBB6797-806D-4EC8-A25E-CF065E497B59}
